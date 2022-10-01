@@ -1,0 +1,72 @@
+    Vous devez écrire un test qui échoue avant d'écrire votre code lui-même.
+    Vous ne devez pas écrire un test plus compliqué que nécessaire.
+    Vous ne devez pas écrire plus de code que nécessaire, juste assez pour faire passer le test qui échoue.
+Ces 3 règles fonctionnent ensemble et font partie d'un processus qui s'appelle le cycle rouge-vert-refactor ("red-green-refactor" en anglais).
+
+BDD
+
+Pour faire un petit recap, la première étape dans votre processus de testing, c'est de détailler les comportements que vous attendez d'une certaine fonctionnalité.
+
+Détaillez ces comportements en utilisant des mots clés BDD comme Étant donné, Quand, Alors, et Et (Given, When, Then, And). Laissez ces comportements attendus guider le processus d'écriture du code.
+
+<EXEMPLE>
+describe("Bowling game", function() {
+
+    it("should properly calculate a gutter game", function() {
+        rollMany(20, 0);
+        expect(game.score()).toEqual(0);
+    });
+    
+    it("should properly calculate a strike", function () {
+        // test
+    });
+    
+    it("should properly calculate a spare", function () {
+        // test
+    });
+        
+});
+</EXEMPLE>
+
+<EXEMPLE>
+describe("Video player", function() {
+    describe("when the page loads", function() {
+        it("should automatically play the video", function() {
+            expect(videoPlaying).toBe(true);
+        };
+    });
+    describe("when user clicks the play button", function() {
+        it("should play the video", function() {
+            expect(videoPlaying).toBe(true);
+        };
+    });
+});
+</EXEMPLE>
+
+<MATCHER>
+    expect(fn).toThrow(e);
+        expect(fn).not.toThrow(e);
+    expect(instance).toBe(instance);
+        expect(instance).not.toBe(instance);
+    expect(mixed).toBeDefined();
+        expect(mixed).not.toBeDefined();
+    expect(mixed).toBeFalsy();
+        expect(mixed).not.toBeFalsy();
+    expect(number).toBeGreaterThan(number);
+        expect(number).not.toBeGreaterThan(number);
+    expect(number).toBeLessThan(number);
+        expect(number).not.toBeLessThan(number);
+    expect(mixed).toBeNull();
+        expect(mixed).not.toBeNull();
+    expect(mixed).toBeTruthy();
+        expect(mixed).not.toBeTruthy();
+    expect(mixed).toBeUndefined();
+        expect(mixed).not.toBeUndefined();
+    expect(array).toContain(member);
+        expect(array).toContain(member);
+    expect(string).not.toContain(substring);
+    expect(mixed).toEqual(mixed);
+        expect(mixed).not.toEqual(mixed);
+    expect(mixed).toMatch(pattern);
+        expect(mixed).not.toMatch(pattern);
+</MATCHER>
