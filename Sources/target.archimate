@@ -80,6 +80,9 @@
     <element xsi:type="archimate:BusinessService" name="Entreprise de vente de médias" id="id-076e675987bc4ec89d5b798fb4ff0c72"/>
     <element xsi:type="archimate:BusinessProcess" name="Vente de médias" id="id-64d71193b2334442bc73403ffad2b4e8"/>
     <element xsi:type="archimate:BusinessService" name="Entreprise de médias" id="id-6711c7a382404c71af9833d1c1706563"/>
+    <element xsi:type="archimate:BusinessActor" name="Business Actor" id="id-30ea421d8ee74bc6bae4ddeea942be0d"/>
+    <element xsi:type="archimate:BusinessRole" name="Business Role" id="id-1d82f54713d74c8bbf6be47f361eba6d"/>
+    <element xsi:type="archimate:BusinessCollaboration" name="Business Collaboration" id="id-43f37526b5a74322acdc62f6776f538e"/>
   </folder>
   <folder name="Application" id="3cdad180-2005-47d6-954f-01cb04161f23" type="application">
     <element xsi:type="archimate:ApplicationService" name="Suite d'applications pour l'animation 2D" id="ecd0fbc9-b04f-40ad-b59c-cf4b9f29b16c"/>
@@ -1468,5 +1471,6 @@
         <sourceConnection xsi:type="archimate:Connection" id="id-6904d75e71c843878b185b085cf6bba8" source="id-3b19b4835c9f493eacd5f3483329a3b9" target="id-ea5f2679ea39454b892f71f4a368a5c9" archimateRelationship="id-fd146a88cc06450691e4931eb0d08854"/>
       </child>
     </element>
+    <element xsi:type="archimate:ArchimateDiagramModel" name="New ArchiMate View" id="id-e7071f89f051409c85ca25e1e77b5931"/>
   </folder>
 </archimate:model>
