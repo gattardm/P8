@@ -1,3 +1,7 @@
+17/10
+Demander si le §Evaluation de l'impact répond aux attentes. Ce § explique le pourquoi du comment des principaux services métiers et localisations à ajouter pour cette architecture cible.
+===========================================
+26/09
     Vous devez écrire un test qui échoue avant d'écrire votre code lui-même.
     Vous ne devez pas écrire un test plus compliqué que nécessaire.
     Vous ne devez pas écrire plus de code que nécessaire, juste assez pour faire passer le test qui échoue.
@@ -70,3 +74,4 @@ describe("Video player", function() {
     expect(mixed).toMatch(pattern);
         expect(mixed).not.toMatch(pattern);
 </MATCHER>
+
