@@ -1,5 +1,17 @@
 17/10
 Demander si le §Evaluation de l'impact répond aux attentes. Ce § explique le pourquoi du comment des principaux services métiers et localisations à ajouter pour cette architecture cible.
+
+DDA
+_Mettre les notions en sous-section des principes
+
+Plan de tests
+créer les scénarios de tests
+_faire un aperçu de tests de façon macro pour chaque scénario avec les jeux de données associés
+_associer les parties prenantes définies dans le cahier des charges aux différents tests dans le PDT
+_faire l'hypothèse de partir sur 3etp pour réaliser un PDT sur 3sem
+
+Prés
+
 ===========================================
 26/09
     Vous devez écrire un test qui échoue avant d'écrire votre code lui-même.
