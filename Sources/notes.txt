@@ -1,3 +1,11 @@
+25/10
+amélioration:
+_attention au timing
+_mettre davantage en avant l'analyse des lacunes
+_la réponse aux questions faire un lien entre les besoins de base/ principes d'architecture la mappage entre le SOA, ACID et le RGPD
+_prendre en compte l'aspect de formation préalable en termes de prérequis => le KeyUser doit-il être formé au préalable pour réaliser les tests?
+
+===========================================
 17/10
 Demander si le §Evaluation de l'impact répond aux attentes. Ce § explique le pourquoi du comment des principaux services métiers et localisations à ajouter pour cette architecture cible.
 
