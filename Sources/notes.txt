@@ -1,11 +1,96 @@
+</===========================================>
+<ORAL1>
+Rajouter des tests d'acceptation associés aux besoins fonctionnels dans le cahier des charges que l'on retrouvera dans le plan de tests (les tests d'acceptation contenus dans le plan de tests seront pus détaillés que ceux abordés dans le cahier des charges)
+rajouter dans le plan de tests les <DONE>listes de controle</DONE> et tests des composants et d'application et tests fonctionnels
+définir les composants mobilisés pour les tests de composants et d'application
+définir des critères d'acceptation CONCRETS!
+</ORAL1>
+</===========================================>
+<COMPLEMENT>
+    Cahier des charges :
+        ajout du §VI.C.Tests d'acceptation au niveau campagne->scénario
+
+    DDA :
+        ajout du §IV.Proposition d'architecture technique
+
+    Plan de test :
+        ajout du §IV.B.Liste de contrôles
+
+    <TODO>
+        <DONE>Ajout d'une proposition d'architecture technique</DONE>
+        <DONE>Ajout de listes de contrôles</DONE>
+        <DONE>
+            Les tests d'acceptation contenus dans le cahier des charges détailleront 'simplement' les scénarios de tests.
+        </DONE>
+        <DONE>
+            Dans le plan de tests : découper les besoins fonctionnels en, au moins, besoins fonctionnels plus spécifique sur lesquels vont venir se baser nos cas de tests.
+        </DONE>
+        <TODO>
+            Les Tests d'acceptation contenus dans le plan de tests proposeront au moins 2 cas de tests pour chaque scénarios
+        <TODO>
+        
+    </TODO>
+</COMPLEMENT>
+
+<THEORIE>
+une bonne archi répond aux critères suivants:
+    Sécurité
+        réponse à DICT et PDMA
+        DICT : Disponibilité, Intégrité, Confidentialité, Traçabilité
+        PDMA : Perte de Données Maximale Admissible (RPO : recovery point objective)
+        Disponibilité
+            reflet de la capacité d’une application à être résiliente (pensez à résistante) à tout événement pouvant générer un arrêt de service.
+            Ce double besoin est souvent exprimé sous forme de DIMA ou Durée d’Interruption Maximum Admissible (RTO en anglais) en heures ou encore sous la forme d’un objectif de service (SLO en anglais) en pourcentage du type 99,999% du temps soit 5,26 minutes d’interruption par an.
+            On parle ici de mécanismes tel que le clustering, la haute disponibilité, la redondance.
+        Intégrité
+            il s’agit de s’assurer qu’une donnée n’est pas modifiée indûment, encore une fois le plus souvent dans un cadre sensible ou légal.
+            Ici, on utilise par exemple des mécanismes de hash ou encore des dispositifs à écriture unique comme les supports WORM.
+        Confidentialité
+            classification de la sensibilité de leurs données, en fonction de l’impact de leur publication. On peut distinguer deux types de données confidentielles : celles très sensibles qui touchent au métier de l’entreprise et dégraderaient sa capacité à continuer son activité en cas de fuite ou de corruption et celles, réglementaires, qui légalement doivent être protégées, gardées secrètes ou supprimées (on pense à la RGPD, notamment).
+            Afin de s’assurer de la confidentialité, on met en général en place du chiffrement, que ce soit au niveau des flux ou des données stockées.
+        Traçabilité
+            capacité à garder une preuve de l’accès ou de la modification d’une donnée, dans le temps. Cette notion est particulièrement pertinente pour les données réglementées ou celles, souvent confidentielles, qui ne doivent être consultées que par peu de personnes.
+            La traçabilité passe la plupart du temps par la mise en place de journaux (logs) répertoriant qui a accédé à quoi et ce qui a été fait.
+        PDMA
+            l’existence même de la donnée qu’il faut pouvoir assurer. En effet, les cas de corruption et surtout de suppression accidentelle sont assez courants et nécessitent d’être envisagés en amont lors de la conception d’un système.
+            Afin de mitiger ces risques, on s’appuie en général sur des mécanismes de réplication, de sauvegarde et d’externalisation des données. A noter, seule la politique de sauvegarde permet d’assurer réellement une PDMA.
+            A noter l’une des difficultés du respect du RGPD, détruire les données qui ne sont plus nécessaires alors que pour les protéger en cas de sinistre, elles ont été sauvegardées et répliquées un certain nombre de fois.
+    Elasticité
+        Composante majeure des architectures modernes, l’élasticité (aussi appelée scalabilité en bon franglais) est la capacité d’un système à répondre à des contraintes changeantes. On distingue en général deux types d’élasticité : une « verticale » dans laquelle on ajoute des ressources supplémentaires aux éléments existants (plus de processeurs, plus de mémoire, plus de disques…), l’autre « horizontale » où l’on ajoute de nouveaux éléments (un serveur web supplémentaire, un switch additionnel).
+        Vous pouvez utiliser l’une et l’autre en fonction des caractéristiques et contraintes de l’application concernée (modèle de licence, capacité à supporter de la répartition de charge, architecture micro-services, etc.)        
+    Couplage faible
+        Notion d’urbanisme (qui est connexe mais bien différente de l’architecture), le couplage est la nature de l’adhérence qu’ont deux systèmes entre eux. Une architecture moderne et bien pensée doit permettre une adhérence faible avec ses interfaces externes (les autres applications utilisées) et internes (ses propres services, par exemple sa base de données).
+        Vous avez sûrement entendu parler de l’approche micro services qui est une déclinaison du couplage lâche en découpant au maximum la logique en éléments indépendants les uns des autres.
+        Sans forcément aller dans cet extrême, fournir par exemple des alias DNS à chacun des services utilisés dans votre système peuvent aider à son évolutivité, en permettant des changements d’IP très simplifiés.
+    Simplicité
+        un système simple sera par essence compréhensible donc opérable, extensible et stable dans la durée.
+        on part d’expressions de besoin brutes et on les affine par la suite, l’architecte apportant les contraintes de temps, de budget et de complexité, afin de permettre au demandeur de préciser ses exigences.
+        le métier de l’architecte consiste avant tout à poser les bonnes questions et à démarrer un échange. La question qui doit être posée en premier est toujours « Quel est le besoin ? ».
+</THEORIE>
+<INFORMATIONNEL>
+un système d’information vu sous l’angle de l’architecture technique peut se décomposer en 4 plans :
+
+    Le plan fonctionnel, représente l’aspect métier, c’est à dire ce que fait l’application et la nature des données qu’elle échange avec le reste du monde ;
+
+    Le plan applicatif est concentré sur l’aspect logiciel : les flux (protocole, fréquence, sens), les stocks (partage de donnée...), les middlewares (base de données, serveur java…) et les frameworks utilisés (.NET, Java...) ;
+
+    Le plan infrastructure permet de décrire les choix techniques: les serveurs (dans le cloud ou ailleurs), leur dimensionnement, l’interconnexion via les réseaux, etc ;
+
+    La couche opérationnelle enfin, décrit comment le système va être géré : les mécanismes de sauvegarde, de supervision, de métrologie, etc.
+</INFORMATIONNEL>
+<THEORIE>
+Qu'est ce que la couche fonctionnelle ?
+Comprendre les tenants et aboutissants d’un système est indispensable pour démarrer un travail d’architecture. La couche fonctionnelle traite de tout ce que fait l'application : les données manipulées et comment elle s'inscrit dans son écosystème applicatif. 
+Quatre axes principaux permettent de détailler l’aspect métier : les utilisateurs, les données utilisées, les traitements réalisés et les interfaces avec les autres applications.
+</THEORIE>
+</===========================================>
 25/10
 amélioration:
 _attention au timing
 _mettre davantage en avant l'analyse des lacunes
 _la réponse aux questions faire un lien entre les besoins de base/ principes d'architecture la mappage entre le SOA, ACID et le RGPD
 _prendre en compte l'aspect de formation préalable en termes de prérequis => le KeyUser doit-il être formé au préalable pour réaliser les tests?
-
-===========================================
+</===========================================>
 17/10
 Demander si le §Evaluation de l'impact répond aux attentes. Ce § explique le pourquoi du comment des principaux services métiers et localisations à ajouter pour cette architecture cible.
 
@@ -17,16 +102,13 @@ créer les scénarios de tests
 _faire un aperçu de tests de façon macro pour chaque scénario avec les jeux de données associés
 _associer les parties prenantes définies dans le cahier des charges aux différents tests dans le PDT
 _faire l'hypothèse de partir sur 3etp pour réaliser un PDT sur 3sem
-
-Prés
-
-===========================================
+</===========================================>
 26/09
     Vous devez écrire un test qui échoue avant d'écrire votre code lui-même.
     Vous ne devez pas écrire un test plus compliqué que nécessaire.
     Vous ne devez pas écrire plus de code que nécessaire, juste assez pour faire passer le test qui échoue.
 Ces 3 règles fonctionnent ensemble et font partie d'un processus qui s'appelle le cycle rouge-vert-refactor ("red-green-refactor" en anglais).
-
+</===========================================>
 BDD
 
 Pour faire un petit recap, la première étape dans votre processus de testing, c'est de détailler les comportements que vous attendez d'une certaine fonctionnalité.
@@ -94,4 +176,4 @@ describe("Video player", function() {
     expect(mixed).toMatch(pattern);
         expect(mixed).not.toMatch(pattern);
 </MATCHER>
-
+</===========================================>
