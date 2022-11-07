@@ -1,9 +1,10 @@
 </===========================================>
 <ORAL1>
-Rajouter des tests d'acceptation associés aux besoins fonctionnels dans le cahier des charges que l'on retrouvera dans le plan de tests (les tests d'acceptation contenus dans le plan de tests seront pus détaillés que ceux abordés dans le cahier des charges)
-rajouter dans le plan de tests les <DONE>listes de controle</DONE> et tests des composants et d'application et tests fonctionnels
-définir les composants mobilisés pour les tests de composants et d'application
-définir des critères d'acceptation CONCRETS!
+    <DONE>être force de proposition d'une architecture technique et en définir les composants</DONE>
+    <DONE>Rajouter des tests d'acceptation associés aux besoins fonctionnels dans le cahier des charges que l'on retrouvera dans le plan de tests (les tests d'acceptation contenus dans le plan de tests seront plus détaillés que ceux abordés dans le cahier des charges)</DONE>
+    <DONE>rajouter dans le plan de tests les listes de controle et tests des composants et d'application et tests fonctionnels</DONE>
+    <DONE>définir les composants mobilisés pour les tests de composants et d'application</DONE>
+    <DONE>définir des critères d'acceptation fonctionnels CONCRETEMENT dans le cahier des charges pour les tests de besoin fonctionnels (ne pas se contenter de la méthodologie permettant de définir ces critères d'acceptation)</DONE>
 </ORAL1>
 </===========================================>
 <COMPLEMENT>
@@ -12,23 +13,31 @@ définir des critères d'acceptation CONCRETS!
 
     DDA :
         ajout du §IV.Proposition d'architecture technique
+        ajout du §IV.A.Présentation des composants de l'architecture technique
+        ajout des §IV.A.1 le niveau Cloud public et §IV.A.2 le niveau Saas/On premise
 
     Plan de test :
         ajout du §IV.B.Liste de contrôles
+        spécification du §II.C.Notions de tests (ajout de la pyramide des tests)
+        Ajout du §V.Fonctionnalités et composants testés
 
     <TODO>
         <DONE>Ajout d'une proposition d'architecture technique</DONE>
+        <DONE>Ajout de la description des composants de l'architecture technique</DONE>
         <DONE>Ajout de listes de contrôles</DONE>
         <DONE>
-            Les tests d'acceptation contenus dans le cahier des charges détailleront 'simplement' les scénarios de tests.
+            cahier des charges : les tests d'acceptation détailleront présenteront les scénarios de tests.
         </DONE>
         <DONE>
-            Dans le plan de tests : découper les besoins fonctionnels en, au moins, besoins fonctionnels plus spécifique sur lesquels vont venir se baser nos cas de tests.
+            plan de tests : les besoins fonctionnels seront découpés plus spécifiquement (les cas de tests seront basés sur ces tests d'acceptation)
         </DONE>
-        <TODO>
+        <DONE>
             Les Tests d'acceptation contenus dans le plan de tests proposeront au moins 2 cas de tests pour chaque scénarios
-        <TODO>
-        
+        </DONE>
+        <DONE>
+            Chaque composant impliqué dans un test sera identifié
+        </DONE>
+
     </TODO>
 </COMPLEMENT>
 
